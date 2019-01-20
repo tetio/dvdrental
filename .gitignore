@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.vscode/
+!.vscode/settings.json
+.idea/
+npm-debug.log
+.DS_Store
+.config
+npm-debug.log*
+*.log
