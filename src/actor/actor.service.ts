@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm'
 import { Actor } from './actor.entity'
-import { Repository } from 'typeorm'
+import { Repository, InsertResult } from 'typeorm'
 
 @Injectable()
 export class ActorService {
@@ -17,4 +17,7 @@ export class ActorService {
         return await this.actorRepository.findOne(id)
     }
     
+    async insert(actor: Actor): Promise<InsertResult> {
+        return await this.actorRepository.insert(actor)
+    }
 }
