@@ -1,8 +1,9 @@
-import { Entity, Column, PrimaryColumn } from "typeorm"
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from "typeorm"
+import { Film } from "../film/film.entity";
 
 @Entity('actor')
 export class Actor {
-    @PrimaryColumn()
+    @PrimaryGeneratedColumn()
     actor_id: number
 
     @Column()
@@ -13,4 +14,5 @@ export class Actor {
 
     @Column()
     last_update: string
+
 }

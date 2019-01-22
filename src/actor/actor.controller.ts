@@ -15,13 +15,13 @@ export class ActorController {
     }
 
     @Get('/:id')
-    async find(@Param() param): Promise<Actor> {
+    find(@Param() param): Promise<Actor> {
         return this.actorService.find(param.id)
     }
 
     @Post()
-    async insert(@Body() actor: Actor) {
-        const result = await this.actorService.insert(actor)
+    insert(@Body() actor: Actor) {
+        const result = this.actorService.insert(actor)
         return result
     }
 }
